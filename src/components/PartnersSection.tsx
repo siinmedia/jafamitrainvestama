@@ -8,7 +8,6 @@ const partners = [
   { name: "Raja Steak", logo: "/logos/7.webp" },
   { name: "Nice Coffee", logo: "/logos/8.webp" },
   { name: "Seblak Express", logo: "/logos/9.webp" },
-  { name: "Chick Ichick", logo: "/logos/10.webp" },
 ];
 
 const row1 = partners.slice(0, Math.ceil(partners.length / 2));
