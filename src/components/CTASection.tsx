@@ -12,37 +12,52 @@ const CTASection = () => {
           transition={{ duration: 0.6 }}
           className="bg-primary rounded-3xl p-10 lg:p-16 text-center"
         >
+          {/* Headline */}
           <h2 className="font-heading text-3xl lg:text-5xl text-primary-foreground mb-4">
-            Ready to Secure Your Financial Future?
+            Mau Mulai Usaha Tapi Bingung Mulai Dari Mana?
           </h2>
+
+          {/* Subheadline */}
           <p className="text-primary-foreground/70 max-w-lg mx-auto mb-8 text-base lg:text-lg">
-            Let's discuss your goals and create a personalized financial strategy that works for you.
+            Konsultasi gratis bersama tim kami dan temukan paket usaha yang cocok untuk Anda. 
+            Semua sudah disiapkan, Anda tinggal mulai.
           </p>
+
+          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            
+            {/* Primary CTA */}
             <a
-              href="#contact"
+              href="https://wa.me/6285155145788"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-accent text-accent-foreground font-medium text-sm hover:opacity-90 transition-opacity"
             >
-              Get Started Today
+              Konsultasi via WhatsApp
               <ArrowRight size={16} />
             </a>
+
+            {/* Secondary CTA */}
             <a
-              href="tel:+1234567890"
+              href="tel:+6285155145788"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-primary-foreground/20 text-primary-foreground font-medium text-sm hover:bg-primary-foreground/10 transition-colors"
             >
               <Phone size={16} />
-              Call Us Now
+              Telepon Sekarang
             </a>
           </div>
-          <div className="flex items-center justify-center gap-6 mt-8 text-primary-foreground/60 text-sm">
+
+          {/* Contact Info */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8 text-primary-foreground/60 text-sm">
+            
             <span className="flex items-center gap-2">
               <Mail size={14} />
-              info@finovate.com
+              anggerajiprayogokusuma@gmail.com
             </span>
+
             <span className="flex items-center gap-2">
               <Phone size={14} />
-              (555) 123-4567
+              0851-5514-5788
             </span>
+
           </div>
         </motion.div>
       </div>

@@ -9,7 +9,7 @@ const HeroSection = () => {
         <div className="relative rounded-3xl overflow-hidden min-h-[500px] lg:min-h-[600px]">
           <img
             src={heroImage}
-            alt="Financial advisors in a professional meeting"
+            alt="Peluang usaha makanan dan minuman siap jual"
             className="absolute inset-0 w-full h-full object-cover"
             width={1280}
             height={720}
@@ -23,27 +23,32 @@ const HeroSection = () => {
               transition={{ duration: 0.7 }}
               className="max-w-xl"
             >
+              {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/90 backdrop-blur-sm text-xs font-medium text-foreground mb-6">
                 <Sparkles size={12} className="text-accent" />
-                <span>WHY US?</span>
+                <span>PELUANG USAHA</span>
               </div>
 
+              {/* Headline */}
               <h1 className="font-heading text-4xl lg:text-6xl text-primary-foreground leading-tight mb-4">
-                You'll Know What{" "}
+                Mulai Usaha Tanpa Ribet,{" "}
                 <span className="inline-block bg-accent/90 text-accent-foreground px-3 py-1 rounded-lg">
-                  Steps to Take Next
+                  Langsung Siap Jual
                 </span>
               </h1>
 
+              {/* Subheadline */}
               <p className="text-primary-foreground/80 text-base lg:text-lg mb-8 max-w-md">
-                We are Transparent. Like that. No Gimmicks.
+                Paket usaha makanan & minuman lengkap dengan brand, bahan, dan sistem. 
+                Tinggal jalan, langsung berpotensi cuan.
               </p>
 
+              {/* CTA */}
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
               >
-                Schedule a Call
+                Konsultasi Gratis
                 <ArrowRight size={16} />
               </a>
             </motion.div>

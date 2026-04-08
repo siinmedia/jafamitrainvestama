@@ -5,11 +5,12 @@ import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
   { label: "Home", href: "#", route: "/" },
-  { label: "About", href: "#about", route: null },
-  { label: "Carir", href: "/career", route: "/career" },
-  { label: "Team", href: "#team", route: null },
-  { label: "Testimonials", href: "#testimonials", route: null },
-  { label: "Contact", href: "#contact", route: null },
+  { label: "Tentang", href: "#about", route: null },
+  { label: "Produk", href: "#products", route: null },
+  { label: "Team Sales", href: "#team", route: null },
+  { label: "Testimoni", href: "#testimonials", route: null },
+  { label: "Karir", href: "/career", route: "/career" },
+  { label: "Kontak", href: "#contact", route: null },
 ];
 
 const Navbar = () => {
@@ -29,8 +30,9 @@ const Navbar = () => {
         </Link>
       );
     }
-    // If we're not on homepage, hash links should go to homepage first
+
     const href = location.pathname !== "/" ? `/${link.href}` : link.href;
+
     return (
       <a
         key={link.label}
@@ -46,20 +48,31 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
+        
+        {/* Logo */}
         <Link to="/" className="font-heading text-2xl text-primary tracking-tight">
-          Finovate
+          Maha Niaga Artha
         </Link>
+
+        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) =>
-            renderLink(link, "text-sm font-medium text-foreground/70 hover:text-primary transition-colors")
+            renderLink(
+              link,
+              "text-sm font-medium text-foreground/70 hover:text-primary transition-colors"
+            )
           )}
         </div>
-        <Link
-          to="/#contact"
+
+        {/* CTA */}
+        <a
+          href="#contact"
           className="hidden md:inline-flex items-center px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
         >
-          Schedule a Call
-        </Link>
+          Konsultasi Gratis
+        </a>
+
+        {/* Mobile Toggle */}
         <button
           className="md:hidden text-foreground"
           onClick={() => setOpen(!open)}
@@ -68,6 +81,8 @@ const Navbar = () => {
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
+
+      {/* Mobile Menu */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -84,13 +99,14 @@ const Navbar = () => {
                   () => setOpen(false)
                 )
               )}
-              <Link
-                to="/#contact"
+
+              <a
+                href="#contact"
                 className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium"
                 onClick={() => setOpen(false)}
               >
-                Schedule a Call
-              </Link>
+                Konsultasi Gratis
+              </a>
             </div>
           </motion.div>
         )}

@@ -4,23 +4,27 @@ import { Shield, Users, TrendingUp, Award } from "lucide-react";
 const values = [
   {
     icon: Shield,
-    title: "Integrity",
-    description: "We uphold the highest ethical standards in every interaction, ensuring transparency, and trust in our work.",
+    title: "Aman & Terpercaya",
+    description:
+      "Konsep usaha sudah teruji dan digunakan oleh banyak mitra, sehingga lebih aman untuk memulai bisnis.",
   },
   {
     icon: Users,
-    title: "Client Focus",
-    description: "We uphold the highest ethical standards in every interaction, ensuring transparency, and trust in our work.",
+    title: "Cocok untuk Pemula",
+    description:
+      "Tanpa pengalaman pun bisa mulai. Sistem dibuat sederhana dan mudah dijalankan sehari-hari.",
   },
   {
     icon: TrendingUp,
-    title: "Risk Resilience",
-    description: "We uphold the highest ethical standards in every interaction, ensuring transparency, and trust in our work.",
+    title: "Potensi Berkembang",
+    description:
+      "Produk mengikuti tren pasar dan memiliki peluang berkembang seiring meningkatnya permintaan.",
   },
   {
     icon: Award,
-    title: "Expertise",
-    description: "We uphold the highest ethical standards in every interaction, ensuring transparency, and trust in our work.",
+    title: "Brand Siap Pakai",
+    description:
+      "Tidak perlu bangun dari nol. Anda langsung menggunakan brand yang sudah siap jual dan dikenal.",
   },
 ];
 
@@ -28,6 +32,17 @@ const ValuesSection = () => {
   return (
     <section id="services" className="py-16 lg:py-20">
       <div className="container mx-auto px-4 lg:px-8">
+
+        {/* Optional heading biar lebih jelas */}
+        <div className="text-center mb-12">
+          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
+            Kenapa Pilih Kami
+          </p>
+          <h2 className="font-heading text-2xl lg:text-3xl text-foreground">
+            Dibuat untuk Memudahkan Anda Memulai Usaha
+          </h2>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {values.map((value, index) => (
             <motion.div
@@ -41,13 +56,18 @@ const ValuesSection = () => {
               <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center mb-4">
                 <value.icon size={16} className="text-accent-foreground" />
               </div>
-              <h3 className="font-heading text-lg mb-2 text-foreground">{value.title}</h3>
+
+              <h3 className="font-heading text-lg mb-2 text-foreground">
+                {value.title}
+              </h3>
+
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {value.description}
               </p>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

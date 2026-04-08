@@ -1,30 +1,20 @@
 import { motion } from "framer-motion";
-import { TrendingUp, Users, GraduationCap, Heart } from "lucide-react";
+import { TrendingUp, Users } from "lucide-react";
 
 const careers = [
   {
-    icon: TrendingUp,
-    title: "Financial Analyst",
-    type: "Full-time",
-    description: "Join our team to analyze market trends and help clients make informed investment decisions.",
-  },
-  {
     icon: Users,
-    title: "Client Relations Manager",
+    title: "Manager Operasional",
     type: "Full-time",
-    description: "Build and maintain strong client relationships while delivering exceptional financial advisory services.",
+    description:
+      "Mengelola operasional harian, memastikan semua outlet berjalan lancar, serta mengawasi tim dan kualitas layanan.",
   },
   {
-    icon: GraduationCap,
-    title: "Junior Advisor Intern",
-    type: "Internship",
-    description: "Kickstart your career in financial planning with hands-on mentorship from seasoned professionals.",
-  },
-  {
-    icon: Heart,
-    title: "Wealth Planning Specialist",
+    icon: TrendingUp,
+    title: "Staff Logistik",
     type: "Full-time",
-    description: "Design comprehensive wealth strategies tailored to high-net-worth individuals and families.",
+    description:
+      "Bertanggung jawab atas pengadaan, distribusi bahan baku, serta memastikan kebutuhan operasional tersedia tepat waktu.",
   },
 ];
 
@@ -32,19 +22,25 @@ const CareerSection = () => {
   return (
     <section id="career" className="py-16 lg:py-24 bg-card">
       <div className="container mx-auto px-4 lg:px-8">
+        
+        {/* Heading */}
         <div className="text-center mb-14">
           <span className="text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-3 block">
             Karir
           </span>
+
           <h2 className="font-heading text-3xl lg:text-4xl text-foreground">
-            Bergabung Bersama Kami
+            Bergabung Bersama Tim Kami
           </h2>
+
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            Temukan peluang karir di Finovate dan jadilah bagian dari tim yang berdedikasi membantu klien meraih masa depan finansial yang lebih baik.
+            Kami membuka kesempatan bagi Anda yang ingin berkembang bersama CV Maha Niaga Artha 
+            dalam membangun dan mengelola bisnis makanan & minuman.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Job List */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {careers.map((career, index) => (
             <motion.div
               key={career.title}
@@ -57,13 +53,21 @@ const CareerSection = () => {
               <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-5 group-hover:bg-accent transition-colors">
                 <career.icon size={22} className="text-accent-foreground" />
               </div>
+
               <span className="text-xs font-semibold tracking-wider text-primary uppercase mb-2">
                 {career.type}
               </span>
-              <h3 className="font-heading text-xl mb-3 text-foreground">{career.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed flex-1">{career.description}</p>
+
+              <h3 className="font-heading text-xl mb-3 text-foreground">
+                {career.title}
+              </h3>
+
+              <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                {career.description}
+              </p>
+
               <a
-                href="#contact"
+                href="https://wa.me/6285155145788"
                 className="mt-5 inline-flex items-center text-sm font-medium text-primary hover:underline"
               >
                 Lamar Sekarang →
@@ -71,6 +75,7 @@ const CareerSection = () => {
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

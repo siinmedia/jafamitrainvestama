@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,46 +6,38 @@
 
 @layer base {
   :root {
-    --background: 40 33% 96%;
-    --foreground: 160 30% 16%;
+    /* ===== COLOR SYSTEM (lebih modern & clean) ===== */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
 
-    --card: 40 25% 94%;
-    --card-foreground: 160 30% 16%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
 
-    --popover: 40 33% 96%;
-    --popover-foreground: 160 30% 16%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
     --primary: 160 40% 22%;
-    --primary-foreground: 40 33% 96%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 40 25% 92%;
-    --secondary-foreground: 160 30% 16%;
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 40 20% 90%;
-    --muted-foreground: 160 10% 45%;
+    --muted: 210 16% 93%;
+    --muted-foreground: 215 16% 47%;
 
     --accent: 72 85% 50%;
     --accent-foreground: 160 40% 12%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 40 20% 88%;
-    --input: 40 20% 88%;
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
     --ring: 160 40% 22%;
 
-    --radius: 0.75rem;
+    --radius: 0.65rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-
-    --font-heading: 'DM Serif Display', serif;
+    /* ===== TYPOGRAPHY ===== */
     --font-body: 'DM Sans', sans-serif;
   }
 }
@@ -56,21 +48,72 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
+  /* ===== HEADING (NO SERIF, CLEAN) ===== */
+  h1 {
+    @apply text-3xl md:text-4xl font-semibold tracking-tight;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl font-semibold tracking-tight;
+  }
+
+  h3 {
+    @apply text-xl font-semibold;
+  }
+
+  h4 {
+    @apply text-lg font-medium;
+  }
+
+  h5 {
+    @apply text-base font-medium;
+  }
+
+  h6 {
+    @apply text-sm font-medium;
+  }
+
+  p {
+    @apply text-base leading-relaxed text-muted-foreground;
+  }
+}
+
+@layer components {
+  /* ===== CARD (biar ga keliatan jadul) ===== */
+  .card-modern {
+    @apply bg-card border border-border rounded-xl p-5 shadow-sm;
+  }
+
+  .card-title {
+    @apply text-base font-semibold text-foreground;
+  }
+
+  .card-desc {
+    @apply text-sm text-muted-foreground;
+  }
+
+  /* ===== BUTTON ===== */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium hover:opacity-90 transition;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-4 py-2 rounded-lg font-medium hover:bg-muted transition;
   }
 }
 
 @layer utilities {
-  .heading-display {
-    font-family: var(--font-heading);
+  .text-balance {
+    text-wrap: balance;
   }
 
-  .body-text {
-    font-family: var(--font-body);
+  /* OPTIONAL: kalau tetap mau serif dikit banget */
+  .serif-accent {
+    font-family: serif;
+    letter-spacing: 0.3px;
   }
 }

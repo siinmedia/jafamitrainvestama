@@ -4,23 +4,27 @@ import { BarChart3, PiggyBank, LineChart, Briefcase } from "lucide-react";
 const services = [
   {
     icon: BarChart3,
-    title: "Wealth Management",
-    description: "Comprehensive strategies tailored to grow, preserve, and transfer your wealth across generations.",
+    title: "Paket Usaha Siap Jual",
+    description:
+      "Semua sudah disiapkan dari konsep, bahan baku, hingga branding. Anda tinggal mulai jualan tanpa ribet.",
   },
   {
     icon: PiggyBank,
-    title: "Retirement Planning",
-    description: "Personalized retirement solutions ensuring financial security and peace of mind for your future.",
+    title: "Modal Terjangkau",
+    description:
+      "Mulai usaha dengan biaya yang realistis dan terukur, cocok untuk pemula hingga yang ingin ekspansi bisnis.",
   },
   {
     icon: LineChart,
-    title: "Investment Strategy",
-    description: "Data-driven investment approaches designed to maximize returns while managing risk effectively.",
+    title: "Potensi Cuan Harian",
+    description:
+      "Produk sudah terbukti laku di pasaran dengan peluang penjualan harian yang stabil dan menjanjikan.",
   },
   {
     icon: Briefcase,
-    title: "Tax Optimization",
-    description: "Strategic tax planning to minimize liabilities and maximize your after-tax wealth accumulation.",
+    title: "Pendampingan Usaha",
+    description:
+      "Dapatkan panduan mulai dari awal hingga berjalan, agar usaha Anda berkembang dengan lebih terarah.",
   },
 ];
 
@@ -28,15 +32,18 @@ const ServicesSection = () => {
   return (
     <section className="py-16 lg:py-24 bg-card">
       <div className="container mx-auto px-4 lg:px-8">
+        
+        {/* Heading */}
         <div className="text-center mb-14">
           <span className="text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-3 block">
-            Our Services
+            Solusi Kami
           </span>
           <h2 className="font-heading text-3xl lg:text-4xl text-foreground">
-            Comprehensive Financial Solutions
+            Semua yang Anda Butuhkan untuk Memulai Usaha
           </h2>
         </div>
 
+        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <motion.div
@@ -50,11 +57,18 @@ const ServicesSection = () => {
               <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-5 group-hover:bg-accent transition-colors">
                 <service.icon size={22} className="text-accent-foreground" />
               </div>
-              <h3 className="font-heading text-xl mb-3 text-foreground">{service.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+
+              <h3 className="font-heading text-xl mb-3 text-foreground">
+                {service.title}
+              </h3>
+
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {service.description}
+              </p>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

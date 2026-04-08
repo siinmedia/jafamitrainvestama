@@ -6,6 +6,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import Career from "./pages/Career.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import AdminDashboard from "./pages/AdminDashboard.tsx";
+import CekStatus from "./pages/CekStatus.tsx";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +20,13 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/career" element={<Career />} />
+          
+          {/* 🔥 ROUTE UNTUK CEK STATUS PELAMAR */}
+          <Route path="/cek-status" element={<CekStatus />} />
+          
+          {/* 🔥 ROUTE UNTUK DASHBOARD ADMIN HRD */}
+          <Route path="/admin-hrd" element={<AdminDashboard />} />
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

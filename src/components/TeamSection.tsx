@@ -6,38 +6,48 @@ import team3 from "@/assets/team-3.jpg";
 import team4 from "@/assets/team-4.jpg";
 
 const teamMembers = [
-  { name: "John Smith", role: "Vice President", image: team1 },
-  { name: "Klara Berger", role: "Senior Advisor/Analyst", image: team2 },
-  { name: "Rebbeka Hof", role: "Vice President", image: team3 },
-  { name: "Donald Ferreira", role: "Managing Director", image: team4 },
+  { name: "Andi Saputra", role: "Sales Executive", image: team1 },
+  { name: "Rina Lestari", role: "Konsultan Usaha", image: team2 },
+  { name: "Fajar Nugroho", role: "Sales Manager", image: team3 },
+  { name: "Dewi Kartika", role: "Customer Support", image: team4 },
 ];
 
 const TeamSection = () => {
   return (
     <section id="team" className="py-16 lg:py-24">
       <div className="container mx-auto px-4 lg:px-8">
+        
+        {/* Heading */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
             <span className="text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-3 block">
-              Our Team
+              Team Sales Kami
             </span>
+
             <h2 className="font-heading text-3xl lg:text-4xl text-foreground leading-tight">
-              Choosing <span className="text-accent-foreground">The Right</span>
+              Siap Membantu Anda{" "}
+              <span className="text-accent-foreground">
+                Memulai Usaha
+              </span>
               <br />
-              Financial Planning Team
+              dari Nol Hingga Jalan
             </h2>
           </div>
+
           <div className="flex items-center gap-3 mt-4 md:mt-0">
-            <span className="text-sm text-muted-foreground">Consults</span>
+            <span className="text-sm text-muted-foreground">
+              Konsultasi Gratis
+            </span>
             <a
-              href="#team"
+              href="#contact"
               className="inline-flex items-center px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium"
             >
-              View All
+              Hubungi Kami
             </a>
           </div>
         </div>
 
+        {/* Team List */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {teamMembers.map((member, index) => (
             <motion.div
@@ -58,16 +68,26 @@ const TeamSection = () => {
                   height={512}
                 />
               </div>
+
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="font-heading text-base text-foreground">{member.name}</h3>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wide">{member.role}</p>
+                  <h3 className="font-heading text-base text-foreground">
+                    {member.name}
+                  </h3>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wide">
+                    {member.role}
+                  </p>
                 </div>
-                <ArrowUpRight size={16} className="text-muted-foreground group-hover:text-accent-foreground transition-colors" />
+
+                <ArrowUpRight
+                  size={16}
+                  className="text-muted-foreground group-hover:text-accent-foreground transition-colors"
+                />
               </div>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

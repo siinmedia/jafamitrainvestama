@@ -5,21 +5,24 @@ import testimonialAvatar from "@/assets/testimonial-avatar.jpg";
 
 const testimonials = [
   {
-    quote: "Finovate has been instrumental in our growth. Their team took the time to truly understand our needs and helped us eliminate inefficiencies.",
-    name: "Carlos Martinez",
-    role: "VP | CEO",
+    quote:
+      "Awalnya saya ragu mulai usaha, tapi setelah ambil paket dari Maha Niaga Artha ternyata langsung bisa jualan. Alat dan bahan sudah lengkap, tinggal jalan saja.",
+    name: "Rizky Pratama",
+    role: "Mitra Mybestea",
     avatar: testimonialAvatar,
   },
   {
-    quote: "The level of transparency and professionalism from Finovate is unmatched. They made complex financial decisions feel straightforward and manageable.",
-    name: "Sarah Williams",
-    role: "CFO | FinTech Corp",
+    quote:
+      "Saya mulai dari nol tanpa pengalaman. Dibimbing dari awal sampai bisa jualan tiap hari. Sekarang sudah punya pelanggan tetap.",
+    name: "Dewi Lestari",
+    role: "Mitra Seblak Express",
     avatar: testimonialAvatar,
   },
   {
-    quote: "Working with Finovate transformed our entire approach to wealth management. Their insights were invaluable and their service exceptional.",
-    name: "Michael Chen",
-    role: "Founder | Apex Holdings",
+    quote:
+      "Enaknya pakai sistem dari sini itu sudah siap semua. Brand sudah dikenal, jadi lebih mudah dapat pembeli dibanding mulai sendiri.",
+    name: "Andi Saputra",
+    role: "Mitra Kopi Ibukota",
     avatar: testimonialAvatar,
   },
 ];
@@ -36,22 +39,28 @@ const TestimonialsSection = () => {
     <section id="testimonials" className="py-16 lg:py-24">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Content */}
           <div>
             <span className="text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-3 block">
-              Testimonials
+              Testimoni Mitra
             </span>
+
             <h2 className="font-heading text-3xl lg:text-4xl text-foreground leading-tight mb-6">
-              Client <span className="text-accent-foreground">Experiences</span> That
-              <br />
-              Speak for Themselves
+              Cerita Nyata Mereka yang{" "}
+              <span className="text-accent-foreground">
+                Sudah Mulai Usaha
+              </span>
             </h2>
+
             <div className="flex items-center gap-4">
               <a
                 href="#testimonials"
                 className="inline-flex items-center px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium"
               >
-                Read All Testimonials
+                Lihat Semua Testimoni
               </a>
+
               <div className="flex items-center gap-1">
                 <span className="text-lg font-bold text-foreground">4.9</span>
                 <div className="flex">
@@ -59,11 +68,14 @@ const TestimonialsSection = () => {
                     <Star key={i} size={14} className="text-accent fill-accent" />
                   ))}
                 </div>
-                <span className="text-xs text-muted-foreground ml-1">Google Reviews</span>
+                <span className="text-xs text-muted-foreground ml-1">
+                  Review Mitra
+                </span>
               </div>
             </div>
           </div>
 
+          {/* Testimonial Card */}
           <motion.div
             key={current}
             initial={{ opacity: 0, x: 20 }}
@@ -72,10 +84,14 @@ const TestimonialsSection = () => {
             className="bg-card rounded-2xl p-8 lg:p-10 border border-border"
           >
             <Quote size={32} className="text-primary/30 mb-4" />
+
             <p className="text-foreground leading-relaxed text-base lg:text-lg mb-8 font-heading italic">
               "{t.quote}"
             </p>
+
             <div className="flex items-center justify-between">
+              
+              {/* Profile */}
               <div className="flex items-center gap-3">
                 <img
                   src={t.avatar}
@@ -90,6 +106,8 @@ const TestimonialsSection = () => {
                   <p className="text-xs text-muted-foreground">{t.role}</p>
                 </div>
               </div>
+
+              {/* Navigation */}
               <div className="flex items-center gap-2">
                 <button
                   onClick={prev}
@@ -106,8 +124,10 @@ const TestimonialsSection = () => {
                   <ChevronRight size={16} />
                 </button>
               </div>
+
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
