@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    /* ===== COLOR SYSTEM (lebih modern & clean) ===== */
+    /* ===== COLOR SYSTEM ===== */
     --background: 0 0% 100%;
     --foreground: 222 47% 11%;
 
@@ -39,6 +39,7 @@
 
     /* ===== TYPOGRAPHY ===== */
     --font-body: 'DM Sans', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
   }
 }
 
@@ -52,7 +53,11 @@
     font-family: var(--font-body);
   }
 
-  /* ===== HEADING (NO SERIF, CLEAN) ===== */
+  /* ===== HEADING (MODERN SANS) ===== */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
   h1 {
     @apply text-3xl md:text-4xl font-semibold tracking-tight;
   }
@@ -83,20 +88,19 @@
 }
 
 @layer components {
-  /* ===== CARD (biar ga keliatan jadul) ===== */
   .card-modern {
     @apply bg-card border border-border rounded-xl p-5 shadow-sm;
   }
 
   .card-title {
     @apply text-base font-semibold text-foreground;
+    font-family: var(--font-heading);
   }
 
   .card-desc {
     @apply text-sm text-muted-foreground;
   }
 
-  /* ===== BUTTON ===== */
   .btn-primary {
     @apply bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium hover:opacity-90 transition;
   }
@@ -111,9 +115,9 @@
     text-wrap: balance;
   }
 
-  /* OPTIONAL: kalau tetap mau serif dikit banget */
-  .serif-accent {
-    font-family: serif;
-    letter-spacing: 0.3px;
+  /* ===== MODERN ACCENT (NO SERIF) ===== */
+  .text-accent-modern {
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
   }
 }
