@@ -8,6 +8,8 @@ import Career from "./pages/Career.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import AdminDashboard from "./pages/AdminDashboard.tsx";
 import CekStatus from "./pages/CekStatus.tsx";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +28,8 @@ const App = () => (
           
           {/* 🔥 ROUTE UNTUK DASHBOARD ADMIN HRD */}
           <Route path="/admin-hrd" element={<AdminDashboard />} />
-          
+          <Route path="/blog" element={<Blog />} />
+<Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

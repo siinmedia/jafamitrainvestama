@@ -73,7 +73,7 @@ const Navbar = () => {
 
         {/* CTA */}
         <a
-          href="#contact"
+          href=""
           className="hidden md:inline-flex items-center px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
         >
           Konsultasi Gratis
