@@ -50,12 +50,12 @@ const CTASection = () => {
             
             <span className="flex items-center gap-2">
               <Mail size={14} />
-              anggerajiprayogokusuma@gmail.com
+              cvmahaniagaartha.sms@gmail.com
             </span>
 
             <span className="flex items-center gap-2">
               <Phone size={14} />
-              0851-5514-5788
+              0812-1212-5422
             </span>
 
           </div>

@@ -67,7 +67,7 @@ const CareerSection = () => {
               </p>
 
               <a
-                href="https://wa.me/6285155145788"
+                href="https://wa.me/081212125422"
                 className="mt-5 inline-flex items-center text-sm font-medium text-primary hover:underline"
               >
                 Lamar Sekarang →
