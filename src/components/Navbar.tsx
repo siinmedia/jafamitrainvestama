@@ -49,10 +49,17 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
         
-        {/* Logo */}
-        <Link to="/" className="font-heading text-2xl text-primary tracking-tight">
-          Maha Niaga Artha
-        </Link>
+<Link
+  to="/"
+  className="font-heading text-2xl tracking-tight leading-none"
+>
+  <span className="font-bold text-foreground">
+    Maha Niaga
+  </span>{" "}
+  <span className="font-extrabold text-primary">
+    Artha
+  </span>
+</Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
