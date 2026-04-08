@@ -1,46 +1,45 @@
+// File: src/data/blogData.ts
+
 export interface BlogPost {
   id: string;
-  slug: string;
   title: string;
-  excerpt: string;
-  content: string[]; 
-  author: string;
-  date: string;
   category: string;
-  imageUrl: string;
+  date: string;
+  readTime: string;
+  image: string;
+  excerpt: string;
+  content: string[]; // Menggunakan array agar mudah membuat paragraf
 }
 
-export const blogs: BlogPost[] = [
+export const blogPosts: BlogPost[] = [
   {
-    id: "1",
-    slug: "tips-mengelola-keuangan-usaha",
-    title: "5 Tips Ampuh Mengelola Keuangan untuk Usaha Kecil",
-    excerpt: "Mengelola keuangan adalah kunci sukses usaha. Pelajari 5 tips praktis agar cash flow bisnis Anda tetap sehat.",
+    id: "tips-lolos-interview",
+    title: "5 Tips Ampuh Lolos Interview Kerja di Era Digital",
+    category: "Karir & Tips",
+    date: "25 Mei 2024",
+    readTime: "4 Menit Baca",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop",
+    excerpt: "Persiapkan dirimu menghadapi wawancara kerja dengan strategi modern yang disukai oleh para HRD.",
     content: [
-      "Mengelola keuangan adalah tantangan terbesar bagi banyak pengusaha kecil. Tanpa manajemen yang baik, bisnis dengan penjualan tinggi pun bisa mengalami masalah kas (cash flow).",
-      "Pertama, pisahkan uang pribadi dan uang bisnis. Ini adalah aturan emas yang sering dilanggar. Dengan memisahkannya, Anda bisa mengetahui secara pasti apakah bisnis Anda untung atau rugi.",
-      "Kedua, buatlah anggaran bulanan. Catat semua proyeksi pemasukan dan pengeluaran. Ketiga, sediakan dana darurat bisnis untuk menghadapi bulan-bulan sepi atau pengeluaran tak terduga.",
-      "Keempat, kelola utang dengan bijak. Jangan meminjam uang lebih dari yang bisa Anda bayar. Terakhir, gunakan software atau aplikasi pencatatan keuangan untuk memudahkan pemantauan harian."
-    ],
-    author: "Tim Maha Niaga",
-    date: "12 Oktober 2023",
-    category: "Keuangan",
-    imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
+      "Wawancara kerja saat ini tidak lagi sekadar tanya jawab biasa. HRD kini lebih fokus pada bagaimana Anda bisa beradaptasi, memecahkan masalah, dan berkolaborasi dalam tim.",
+      "Pertama, riset adalah kunci. Jangan datang ke wawancara tanpa mengetahui latar belakang perusahaan. Pelajari produk, visi, misi, dan budaya kerja mereka. Ini akan menunjukkan bahwa Anda proaktif dan benar-benar tertarik.",
+      "Kedua, gunakan metode STAR (Situation, Task, Action, Result) saat menjawab pertanyaan berbasis pengalaman. Cara ini membantu Anda bercerita dengan terstruktur dan menonjolkan hasil nyata dari pekerjaan Anda sebelumnya.",
+      "Terakhir, jangan lupa siapkan pertanyaan untuk HRD atau User. Bertanya di akhir sesi menunjukkan antusiasme dan pemikiran kritis Anda terhadap posisi yang dilamar."
+    ]
   },
   {
-    id: "2",
-    slug: "strategi-marketing-era-digital",
-    title: "Strategi Marketing di Era Digital untuk Pemula",
-    excerpt: "Bingung mulai dari mana untuk memasarkan produk secara online? Simak panduan dasar digital marketing berikut ini.",
+    id: "budaya-kerja-inovatif",
+    title: "Mengenal Budaya Kerja Inovatif di Maha Niaga Artha",
+    category: "Perusahaan",
+    date: "20 Mei 2024",
+    readTime: "3 Menit Baca",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop",
+    excerpt: "Mengapa lingkungan kerja yang kolaboratif sangat penting bagi pertumbuhan karir dan perusahaan?",
     content: [
-      "Era digital membuka peluang luar biasa bagi bisnis kecil untuk bersaing dengan perusahaan besar. Namun, tanpa strategi yang tepat, Anda hanya akan membuang-buang waktu dan anggaran.",
-      "Langkah pertama adalah memahami siapa target audiens Anda. Di platform mana mereka menghabiskan waktu? Apakah di Instagram, TikTok, atau LinkedIn?",
-      "Selanjutnya, bangun 'rumah' digital Anda. Ini bisa berupa website profesional atau akun media sosial yang dikelola secara konsisten dengan konten yang memberikan nilai tambah bagi pengikut Anda.",
-      "Jangan ragu untuk mulai menggunakan iklan berbayar (Ads) dalam skala kecil. Uji coba dengan anggaran minim untuk melihat iklan mana yang paling banyak mendatangkan konversi."
-    ],
-    author: "Tim Maha Niaga",
-    date: "25 November 2023",
-    category: "Marketing",
-    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+      "Di Maha Niaga Artha, kami percaya bahwa inovasi lahir dari kolaborasi. Kami tidak hanya bekerja, tetapi kami tumbuh bersama sebagai satu keluarga besar.",
+      "Budaya kerja kami mengedepankan komunikasi yang terbuka (open door policy), di mana setiap ide dihargai, terlepas dari apa pun posisi Anda di perusahaan.",
+      "Selain itu, kami rutin mengadakan sesi 'Knowledge Sharing' setiap bulannya. Ini adalah momen di mana anggota tim bisa berbagi ilmu baru, pengalaman, atau sekadar berdiskusi santai mengenai tren industri terkini.",
+      "Bergabung dengan kami berarti Anda siap untuk terus belajar, berinovasi, dan memberikan dampak positif bagi masyarakat."
+    ]
   }
 ];
