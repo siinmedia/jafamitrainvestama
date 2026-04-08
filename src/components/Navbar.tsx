@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "#about" },
-  { label: "Carir", href: "#career" },
-  { label: "Team", href: "#team" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "#", route: "/" },
+  { label: "About", href: "#about", route: null },
+  { label: "Carir", href: "/career", route: "/career" },
+  { label: "Team", href: "#team", route: null },
+  { label: "Testimonials", href: "#testimonials", route: null },
+  { label: "Contact", href: "#contact", route: null },
 ];
 
 const Navbar = () => {
