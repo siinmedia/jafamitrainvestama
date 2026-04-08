@@ -2,14 +2,19 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}"
+  ],
   prefix: "",
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.5rem", // lebih tight biar ga terlalu kosong
       screens: {
-        "2xl": "1400px",
+        "2xl": "1320px", // sedikit lebih compact (lebih modern feel)
       },
     },
     extend: {
@@ -58,10 +63,13 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+
+      /* ===== TYPOGRAPHY (FIXED) ===== */
       fontFamily: {
-        heading: ['DM Serif Display', 'serif'],
+        heading: ['Outfit', 'sans-serif'],
         body: ['DM Sans', 'sans-serif'],
       },
+
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -69,6 +77,7 @@ export default {
         xl: "1rem",
         "2xl": "1.5rem",
       },
+
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -83,6 +92,7 @@ export default {
           to: { opacity: "1", transform: "translateY(0)" },
         },
       },
+
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
