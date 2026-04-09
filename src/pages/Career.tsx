@@ -20,31 +20,37 @@ import { supabase } from "@/lib/supabase";
 
 const careers = [
   {
-    icon: Users,
-    title: "Manager Operasional",
-    type: "Full-time",
-    location: "Jepara, Jawa Tengah",
-    description:
-      "Bertanggung jawab mengelola operasional usaha secara keseluruhan, memastikan semua outlet berjalan lancar dan sesuai standar.",
-    responsibilities: [
-      "Mengawasi operasional harian outlet",
-      "Mengelola tim dan memastikan kinerja optimal",
-      "Menjaga kualitas produk dan layanan",
-      "Menyusun strategi operasional agar usaha berkembang",
+  icon: Users,
+  title: "Manager Operasional",
+  type: "Full-time",
+  location: "Jepara, Jawa Tengah",
+  description:
+    "Bertanggung jawab mengelola operasional usaha secara keseluruhan, memastikan semua outlet berjalan lancar dan sesuai standar.",
+  requirements: [
+    "Usia maksimal 35 tahun",
+    "Pendidikan minimal S1 Manajemen, Bisnis atau bidang terkait",
+    "Pengalaman minimal 5 tahun di posisi manajerial waralaba/franchise dengan minimal 3 tahun di industri F&B",
+    "Memiliki kemampuan komunikasi, negosiasi, dan kepemimpinan yang baik",
+    "Menguasai operasional F&B, analisa bisnis, forecasting, dan budgeting perusahaan",
+    "Mampu menganalisis strategi perusahaan",
+    "Memahami product knowledge, quality management, dan operational management",
+    "Bersedia ditempatkan di Jepara",
     ],
   },
   {
-    icon: TrendingUp,
-    title: "Staff Logistik",
-    type: "Full-time",
-    location: "Jepara, Jawa Tengah",
-    description:
-      "Mengelola pengadaan dan distribusi bahan baku agar operasional usaha berjalan lancar tanpa hambatan.",
-    responsibilities: [
-      "Mengatur stok dan ketersediaan bahan baku",
-      "Mengelola pengiriman ke outlet atau mitra",
-      "Berkoordinasi dengan supplier",
-      "Memastikan distribusi tepat waktu dan efisien",
+  icon: TrendingUp,
+  title: "Staff Logistik",
+  type: "Full-time",
+  location: "Jepara, Jawa Tengah",
+  description:
+    "Mengelola pengadaan dan distribusi bahan baku agar operasional usaha berjalan lancar tanpa hambatan.",
+  requirements: [
+    "Jujur, ulet, dan enerjik",
+    "Laki-laki",
+    "Belum menikah",
+    "Usia maksimal 28 tahun",
+    "Lulusan minimal SMA/sederajat",
+    "Memiliki sifat pekerja keras",
     ],
   },
 ];
