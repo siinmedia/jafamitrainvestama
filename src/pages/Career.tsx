@@ -50,7 +50,6 @@ const careers = [
   },
 ];
 
-
 const Career = () => {
   const [selectedJob, setSelectedJob] = useState<any>(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -113,7 +112,35 @@ const Career = () => {
 
       if (insertError) throw insertError;
 
-      alert("Lamaran berhasil dikirim 🚀");
+      // ==========================================
+      // INTEGRASI NOTIFIKASI WA DENGAN FONNTE
+      // ==========================================
+      const noWa = formData.get("whatsapp") as string;
+      const namaUser = formData.get("nama") as string;
+      const posisiLamar = formData.get("posisi") as string;
+
+      const waMessage = `Halo *${namaUser}*! 👋\n\nTerima kasih telah mengirimkan lamaran untuk posisi *${posisiLamar}* di *Maha Niaga Artha*.\n\nData dan CV Anda telah berhasil kami terima ke dalam sistem. Tim HRD kami akan segera melakukan review terhadap kualifikasi Anda.\n\nAnda dapat mengecek status lamaran secara berkala melalui menu "Karir" di website kami dengan menggunakan Email dan Nomor WhatsApp ini.\n\nSemoga sukses!\n\nSalam Hangat,\n*Tim HRD Maha Niaga Artha*`;
+
+      try {
+        const fonnteData = new FormData();
+        fonnteData.append("target", noWa);
+        fonnteData.append("message", waMessage);
+        fonnteData.append("countryCode", "62"); // Auto ubah awalan 08 menjadi +62
+
+        await fetch("https://api.fonnte.com/send", {
+          method: "POST",
+          headers: {
+            "Authorization": "xA1xMamR1TvejGxqXCS8" // Token Fonnte
+          },
+          body: fonnteData
+        });
+      } catch (fonnteError) {
+        console.error("Gagal mengirim WA:", fonnteError);
+        // Error Fonnte tidak di-throw agar tidak mengganggu proses sukses apply
+      }
+      // ==========================================
+
+      alert("Lamaran berhasil dikirim 🚀 Silakan cek WhatsApp Anda.");
       e.target.reset(); 
       closeModal(); 
     } catch (error: any) {
@@ -437,7 +464,8 @@ const Career = () => {
 
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-foreground">Nomor WhatsApp</label>
-                  <input name="whatsapp" type="tel" required placeholder="0812..." className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:ring-2 focus:ring-primary/20 outline-none" />
+                  <input name="whatsapp" type="tel" required placeholder="08123456789" className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:ring-2 focus:ring-primary/20 outline-none" />
+                  <p className="text-[10px] text-muted-foreground mt-1">*Pastikan nomor aktif untuk menerima notifikasi</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
