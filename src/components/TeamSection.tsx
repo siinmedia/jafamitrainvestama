@@ -2,30 +2,36 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 const teamMembers = [
+
+    {
+    name: "Livya Ayu",
+    role: "Senior Sales Marketing",
+    image: "/dm/dm%201.webp",
+    phone: "6282124952606",
+  },
+
+    {
+    name: "Berliiana",
+    role: "Sales Marketing",
+    image: "/dm/dm%202.webp",
+    phone: "6285117276822",
+  },
+
+    {
+    name: "Putri Sri",
+    role: "Sales Marketing",
+    image: "/dm/dm%203.webp",
+    phone: "6281212126722",
+  },
+
   {
     name: "Kristianti",
     role: "Sales Marketing",
     image: "/dm/dm%204.webp",
     phone: "6281234086100",
   },
-  {
-    name: "Livya Ayu",
-    role: "Senior Sales Marketing",
-    image: "/dm/dm%201.webp",
-    phone: "6282124952606",
-  },
-  {
-    name: "Putri Sri",
-    role: "Sales Marketing",
-    image: "/dm/dm%203.webp",
-    phone: "6281212126722",
-  },
-  {
-    name: "Berliiana",
-    role: "Sales Marketing",
-    image: "/dm/dm%202.webp",
-    phone: "6285117276822",
-  },
+
+
 ];
 
 const TeamSection = () => {
