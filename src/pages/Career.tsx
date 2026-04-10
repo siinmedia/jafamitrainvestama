@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Helmet } from "react-helmet-async"; 
+import { Helmet } from "react-helmet-async"; // Import Helmet untuk SEO
 import {
   TrendingUp,
   Users,
@@ -19,7 +19,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { supabase } from "@/lib/supabase";
 
-// DATA KITA UPDATE DENGAN FORMAT **TEKS BOLD** UNTUK HIGHLIGHT
 const careers = [
   {
     icon: Users,
@@ -29,14 +28,14 @@ const careers = [
     description:
       "Bertanggung jawab mengelola operasional usaha secara keseluruhan, memastikan semua outlet berjalan lancar dan sesuai standar. Peluang karir terbaik di Jepara untuk profesional F&B.",
     responsibilities: [
-      "Usia maksimal **35 tahun**",
-      "Pendidikan minimal **S1 Manajemen, Bisnis** atau bidang terkait",
-      "Pengalaman **minimal 5 tahun** manajerial waralaba & **3 tahun** di industri F&B",
-      "Memiliki kemampuan **komunikasi, negosiasi, dan kepemimpinan** yang kuat",
-      "Menguasai **operasional F&B, analisa bisnis, forecasting, dan budgeting**",
-      "Mampu **menganalisis strategi** pertumbuhan perusahaan",
-      "Memahami **product knowledge** dan **quality management**",
-      "Bersedia ditempatkan di **Jepara**",
+      "Usia maksimal 35 tahun",
+      "Pendidikan minimal S1 Manajemen, Bisnis atau bidang terkait",
+      "Pengalaman minimal 5 tahun di posisi manajerial waralaba/franchise dengan minimal 3 tahun di industri F&B",
+      "Memiliki kemampuan komunikasi, negosiasi, dan kepemimpinan yang baik",
+      "Menguasai operasional F&B, analisa bisnis, forecasting, dan budgeting perusahaan",
+      "Mampu menganalisis strategi perusahaan",
+      "Memahami product knowledge, quality management, dan operational management",
+      "Bersedia ditempatkan di Jepara",
     ],
   },
   {
@@ -47,30 +46,18 @@ const careers = [
     description:
       "Mengelola pengadaan dan distribusi bahan baku agar operasional usaha berjalan lancar tanpa hambatan. Cocok untuk Anda yang mencari loker logistik di area Jepara.",
     responsibilities: [
-      "**Jujur, ulet, dan enerjik**",
-      "Berjenis kelamin **Laki-laki** dan **Belum menikah**",
-      "Usia maksimal **28 tahun**",
-      "Lulusan minimal **SMA/sederajat**",
-      "Memiliki dedikasi tinggi dan **pekerja keras**",
+      "Jujur, ulet, dan enerjik",
+      "Laki-laki",
+      "Belum menikah",
+      "Usia maksimal 28 tahun",
+      "Lulusan minimal SMA/sederajat",
+      "Memiliki sifat pekerja keras",
     ],
   },
 ];
 
-// FUNGSI UNTUK MERUBAH **TEKS** MENJADI BOLD DAN BERWARNA
-const highlightText = (text: string) => {
-  const parts = text.split(/(\*\*.*?\*\*)/g);
-  return parts.map((part, index) => {
-    if (part.startsWith("**") && part.endsWith("**")) {
-      return (
-        <strong key={index} className="font-extrabold text-foreground tracking-wide">
-          {part.slice(2, -2)}
-        </strong>
-      );
-    }
-    return <span key={index}>{part}</span>;
-  });
-};
-
+// SCHEMA MARKUP UNTUK GOOGLE JOBS (SEO TINGKAT TINGGI)
+// Ini yang membuat loker muncul di widget Google Jobs Page 1 tanpa perlu spam kata.
 const generateJobSchema = () => {
   const jobSchemas = careers.map((job) => ({
     "@context": "https://schema.org/",
@@ -80,7 +67,7 @@ const generateJobSchema = () => {
     hiringOrganization: {
       "@type": "Organization",
       name: "Maha Niaga Artha",
-      logo: "https://domainkamu.com/logo.png",
+      logo: "https://domainkamu.com/logo.png", // Ganti dengan URL logo asli
     },
     jobLocation: {
       "@type": "Place",
@@ -95,7 +82,7 @@ const generateJobSchema = () => {
     datePosted: new Date().toISOString().split("T")[0],
     validThrough: new Date(new Date().setMonth(new Date().getMonth() + 1))
       .toISOString()
-      .split("T")[0],
+      .split("T")[0], // Valid 1 bulan dari sekarang
   }));
 
   return JSON.stringify(jobSchemas);
@@ -177,6 +164,7 @@ const Career = () => {
       const posisiLamar = formData.get("posisi") as string;
       const emailUser = formData.get("email") as string;
 
+      // Notif WA Pelamar
       const waMessageApplicant = `Halo *${namaUser}*! 👋\n\nTerima kasih telah mengirimkan lamaran untuk posisi *${posisiLamar}* di *Maha Niaga Artha*.\n\nData dan CV Anda telah berhasil kami terima ke dalam sistem. Tim HRD kami akan segera melakukan review terhadap kualifikasi Anda.\n\nAnda dapat mengecek status lamaran secara berkala melalui menu "Karir" di website kami dengan menggunakan Email dan Nomor WhatsApp ini.\n\nSemoga sukses!\n\nSalam Hangat,\n*Tim HRD Maha Niaga Artha*`;
 
       try {
@@ -194,6 +182,7 @@ const Career = () => {
         console.error("Gagal WA Pelamar:", err);
       }
 
+      // Notif WA HRD
       const hrPhone = "085155145788";
       const hrMessage = `🚨 *LAMARAN BARU MASUK* 🚨\n\nHalo Tim HRD,\nAda lamaran baru masuk melalui website dengan rincian:\n\n👤 *Nama*: ${namaUser}\n💼 *Posisi*: ${posisiLamar}\n📞 *WhatsApp*: ${noWa}\n✉️ *Email*: ${emailUser}\n\nSilakan login ke *Admin Dashboard* untuk melihat CV dan melakukan review pelamar.\n\nSemangat kerjanya! 💪`;
 
@@ -261,6 +250,7 @@ const Career = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* ================= SEO HELMET ================= */}
       <Helmet>
         <title>Lowongan Kerja Jepara Terupdate | Karir Maha Niaga Artha</title>
         <meta 
@@ -269,17 +259,21 @@ const Career = () => {
         />
         <meta name="keywords" content="Lowongan kerja Jepara, Loker Jepara terbaru, karir Maha Niaga Artha, lowongan manager operasional jepara, loker F&B jepara, lowongan staff logistik" />
         
+        {/* Open Graph (Untuk share di WA/FB) */}
         <meta property="og:title" content="Lowongan Kerja di Maha Niaga Artha Jepara" />
         <meta property="og:description" content="Temukan peluang karir profesional di bidang manajerial dan operasional bersama kami di Jepara." />
         <meta property="og:type" content="website" />
         
+        {/* Inject JSON-LD Schema ke Head */}
         <script type="application/ld+json">
           {generateJobSchema()}
         </script>
       </Helmet>
+      {/* ============================================= */}
 
       <Navbar />
 
+      {/* HERO SECTION - Semantic H1 */}
       <section className="pt-28 pb-16 lg:pt-36 lg:pb-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
@@ -296,6 +290,7 @@ const Career = () => {
               Kembali ke Beranda
             </Link>
 
+            {/* Keyword diselipkan natural di H1 */}
             <h1 className="text-4xl lg:text-5xl font-bold mb-4 tracking-tight">
               Peluang Karir & Lowongan Kerja di Maha Niaga Artha
             </h1>
@@ -307,6 +302,7 @@ const Career = () => {
         </div>
       </section>
 
+      {/* WHY JOIN SECTION - Semantic H2 */}
       <section className="py-16 bg-card border-b border-border">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
@@ -340,6 +336,7 @@ const Career = () => {
         </div>
       </section>
 
+      {/* CEK STATUS LAMARAN SECTION */}
       <section className="py-16 bg-muted/30 border-b border-border">
         <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
           <div className="bg-background border border-border rounded-3xl p-6 md:p-10 shadow-sm">
@@ -400,6 +397,7 @@ const Career = () => {
         </div>
       </section>
 
+      {/* POSISI TERBUKA SECTION */}
       <section className="py-20 lg:py-28" id="daftar-lowongan">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
@@ -419,13 +417,14 @@ const Career = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="group p-8 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all flex flex-col"
+                className="group p-8 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all"
               >
                 <div className="flex items-start gap-5 mb-6">
                   <div className="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
                     <career.icon size={26} />
                   </div>
                   <div>
+                    {/* H3 Sangat bagus untuk SEO List item */}
                     <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">{career.title}</h3>
                     <div className="flex items-center gap-4 mt-2 text-xs font-medium text-muted-foreground">
                       <span className="flex items-center gap-1.5"><Clock size={14} className="text-primary" /> {career.type}</span>
@@ -436,19 +435,17 @@ const Career = () => {
 
                 <p className="text-sm text-muted-foreground mb-6 leading-relaxed">{career.description}</p>
 
-                {/* DI SINI LETAK PERUBAHAN HIGHLIGHT BOLD-NYA */}
-                <ul className="space-y-3 mb-8 flex-grow" aria-label={`Tanggung Jawab ${career.title}`}>
-                  {career.responsibilities.map((r, i) => (
-                    <li key={i} className="text-sm text-muted-foreground flex items-start gap-3 leading-relaxed">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0" />
-                      <div>{highlightText(r)}</div>
+                <ul className="space-y-3 mb-8" aria-label={`Tanggung Jawab ${career.title}`}>
+                  {career.responsibilities.map((r) => (
+                    <li key={r} className="text-sm text-foreground/80 flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" /> {r}
                     </li>
                   ))}
                 </ul>
 
                 <button
                   onClick={() => handleApply(career)}
-                  className="w-full mt-auto inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-primary text-primary-foreground text-sm font-bold hover:opacity-90 transition-all shadow-lg shadow-primary/20"
+                  className="w-full md:w-auto inline-flex items-center justify-center px-8 py-3 rounded-xl bg-primary text-primary-foreground text-sm font-bold hover:opacity-90 transition-all shadow-lg shadow-primary/20"
                 >
                   Lamar Posisi Ini
                 </button>
@@ -468,6 +465,7 @@ const Career = () => {
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               className="w-full max-w-xl bg-card rounded-[2rem] shadow-2xl relative flex flex-col my-auto border border-border"
             >
+              {/* Header Modal */}
               <div className="px-8 py-6 border-b border-border flex justify-between items-center bg-card rounded-t-[2rem]">
                 <div>
                   <h3 className="text-2xl font-bold text-foreground tracking-tight">Kirim Lamaran Kerja</h3>
@@ -482,9 +480,11 @@ const Career = () => {
                 </button>
               </div>
 
+              {/* Body Modal */}
               <div className="px-8 py-6 overflow-y-auto custom-scrollbar max-h-[70vh]">
                 <form onSubmit={handleSubmitApply} className="space-y-6">
                   
+                  {/* Hidden Input Posisi */}
                   <input type="hidden" name="posisi" value={selectedJob?.title || ""} />
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -532,6 +532,7 @@ const Career = () => {
                     </div>
                   </div>
 
+                  {/* Area Upload Dokumen */}
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Upload CV (PDF/DOCX) *</label>
                     <div className="relative group">
@@ -559,6 +560,7 @@ const Career = () => {
                     ></textarea>
                   </div>
 
+                  {/* Footer Action */}
                   <div className="pt-4 pb-2">
                     <button 
                       type="submit" disabled={loading} 
