@@ -1,56 +1,54 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import { ChevronDown, ArrowLeft, Package, Truck, MapPin, Store } from "lucide-react";
+import { ChevronDown, ArrowLeft, Package, Truck, MapPin, Store, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-// DATA BRAND (Saya gunakan 9 data dari Anda dengan tambahan deskripsi SEO-friendly)
+// DATA BRAND (Copywriting natural untuk SEO, tanpa spam keyword)
 const brands = [
-  { name: "Mybestea", logo: "/logos/1.webp", desc: "Franchise minuman teh kekinian dengan varian rasa premium yang disukai milenial." },
-  { name: "You Need Mie", logo: "/logos/2.webp", desc: "Waralaba mie pedas berlevel dengan topping melimpah dan bumbu rahasia otentik." },
-  { name: "Mentoast", logo: "/logos/3.webp", desc: "Konsep bisnis roti bakar modern dengan isian manis dan gurih untuk segala suasana." },
-  { name: "Kopi Ibukota", logo: "/logos/4.webp", desc: "Kopi susu gula aren dengan biji kopi pilihan nusantara. Cita rasa khas kopi senja." },
-  { name: "Esteh Ibukota", logo: "/logos/5.webp", desc: "Es teh manis jumbo dengan racikan daun teh asli yang menyegarkan dahaga." },
-  { name: "Kentang Gantenk", logo: "/logos/6.webp", desc: "Camilan french fries dengan bumbu tabur aneka rasa yang renyah dan gurih." },
-  { name: "Raja Steak", logo: "/logos/7.webp", desc: "Paket usaha steak ayam dan sapi dengan harga kaki lima namun rasa bintang lima." },
-  { name: "Nice Coffee", logo: "/logos/8.webp", desc: "Kedai kopi modern berkonsep minimalis, menyajikan espresso base dan frappe." },
-  { name: "Seblak Express", logo: "/logos/9.webp", desc: "Peluang usaha seblak prasmanan pedas nampol dengan puluhan topping menarik." },
+  { name: "Mybestea", logo: "/logos/1.webp", desc: "Minuman teh kekinian dengan varian rasa premium yang disukai milenial. Setup booth praktis dan bahan baku terjangkau." },
+  { name: "You Need Mie", logo: "/logos/2.webp", desc: "Peluang bisnis mie pedas berlevel dengan topping melimpah dan bumbu rahasia otentik yang bikin pelanggan kembali." },
+  { name: "Mentoast", logo: "/logos/3.webp", desc: "Konsep roti bakar modern dengan isian manis dan gurih. Cocok untuk target pasar segala usia di berbagai lokasi." },
+  { name: "Kopi Ibukota", logo: "/logos/4.webp", desc: "Kopi susu gula aren dengan biji kopi pilihan nusantara. Menghadirkan cita rasa khas kedai kopi senja masa kini." },
+  { name: "Esteh Ibukota", logo: "/logos/5.webp", desc: "Es teh manis jumbo dengan racikan daun teh asli yang menyegarkan dahaga. Usaha dengan perputaran modal tercepat." },
+  { name: "Kentang Gantenk", logo: "/logos/6.webp", desc: "Camilan french fries dengan bumbu tabur aneka rasa yang renyah dan gurih. Sangat digemari anak-anak hingga dewasa." },
+  { name: "Raja Steak", logo: "/logos/7.webp", desc: "Paket usaha steak ayam dan sapi dengan harga kaki lima namun memberikan pengalaman makan dengan rasa bintang lima." },
+  { name: "Nice Coffee", logo: "/logos/8.webp", desc: "Kedai kopi modern berkonsep minimalis, menyajikan espresso base dan frappe berkualitas untuk pencinta kopi." },
+  { name: "Seblak Express", logo: "/logos/9.webp", desc: "Peluang kemitraan seblak prasmanan pedas nampol dengan puluhan varian topping menarik yang sedang viral." },
 ];
 
-// DATA FAQ UNTUK SEO & AI READABILITY
+// DATA FAQ (People Also Ask SEO)
 const faqs = [
   {
-    question: "Pengiriman paket usaha dan bahan baku dikirim dari mana?",
-    answer: "Seluruh kelengkapan paket usaha, booth, dan bahan baku dikirim langsung dari gudang pusat Maha Niaga Artha yang berlokasi di **Jepara, Jawa Tengah**."
+    question: "Pengiriman paket peralatan dan bahan baku dari mana?",
+    answer: "Seluruh kelengkapan booth, peralatan masak, dan bahan baku awal dikirim langsung dari gudang operasional pusat kami yang berlokasi di **Jepara, Jawa Tengah**."
   },
   {
-    question: "Apakah ada biaya ongkos kirim (ongkir) untuk pengiriman paket franchise?",
-    answer: "Ya, biaya ongkos kirim ditanggung oleh mitra. Namun jangan khawatir, kami telah bekerja sama dengan ekspedisi kargo terpercaya untuk memberikan tarif pengiriman yang paling terjangkau ke seluruh Indonesia."
+    question: "Apakah mitra dibebankan biaya ongkos kirim (ongkir)?",
+    answer: "Ya, ongkos kirim ditanggung oleh mitra. Namun kami telah bekerja sama dengan berbagai ekspedisi kargo rekanan untuk memastikan Anda mendapatkan **tarif pengiriman paling ekonomis** ke seluruh Indonesia."
   },
   {
-    question: "Berapa lama estimasi pengiriman paket usaha sampai ke lokasi mitra?",
-    answer: "Untuk wilayah Pulau Jawa, estimasi pengiriman sekitar **2-4 hari kerja**. Sedangkan untuk luar Pulau Jawa (Sumatera, Kalimantan, Sulawesi, dll) estimasi menyesuaikan jadwal kapal kargo, rata-rata **7-14 hari kerja**."
+    question: "Berapa lama estimasi waktu pengiriman paket usaha?",
+    answer: "Untuk wilayah Pulau Jawa, estimasi barang sampai sekitar **2-4 hari kerja**. Sedangkan untuk luar Pulau Jawa (Sumatera, Kalimantan, Sulawesi, dll) rata-rata membutuhkan waktu **7-14 hari kerja** menyesuaikan jadwal kapal kargo."
   },
   {
-    question: "Apakah saya bisa melakukan survey langsung ke kantor pusat?",
-    answer: "Sangat bisa! Kami sangat terbuka jika Anda ingin berkunjung, mencicipi tester produk (food tasting), dan berkonsultasi langsung di kantor pusat kami di Jepara."
+    question: "Apakah calon mitra bisa datang langsung ke kantor pusat?",
+    answer: "Sangat dianjurkan! Kami menyambut baik calon mitra yang ingin berkunjung, melakukan **food tasting (mencicipi produk)**, dan berkonsultasi bisnis secara langsung di kantor kami."
   }
 ];
 
-// FUNGSI UNTUK MERUBAH **TEKS** MENJADI BOLD
 const highlightText = (text: string) => {
   const parts = text.split(/(\*\*.*?\*\*)/g);
   return parts.map((part, index) => {
     if (part.startsWith("**") && part.endsWith("**")) {
-      return <strong key={index} className="font-extrabold text-foreground">{part.slice(2, -2)}</strong>;
+      return <strong key={index} className="font-extrabold text-[#132b26]">{part.slice(2, -2)}</strong>;
     }
     return <span key={index}>{part}</span>;
   });
 };
 
-// GENERATE JSON-LD UNTUK SEO GOOGLE & AI
 const generateSEOData = () => {
   const itemListSchema = {
     "@context": "https://schema.org",
@@ -62,7 +60,7 @@ const generateSEOData = () => {
         "@type": "Brand",
         "name": brand.name,
         "description": brand.desc,
-        "logo": `https://domainkamu.com${brand.logo}` // Ganti dengan domain asli nanti
+        "logo": `https://mahaniagaartha.com${brand.logo}` 
       }
     }))
   };
@@ -75,7 +73,7 @@ const generateSEOData = () => {
       "name": faq.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": faq.answer.replace(/\*\*/g, "") // Hilangkan markdown bintang untuk raw JSON
+        "text": faq.answer.replace(/\*\*/g, "") 
       }
     }))
   };
@@ -87,70 +85,46 @@ const Products = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* ================= SEO HELMET ================= */}
-      <Helmet>
-        <title>Daftar Brand Franchise F&B | Kemitraan Maha Niaga Artha</title>
-        <meta 
-          name="description" 
-          content="Temukan berbagai pilihan paket usaha dan franchise makanan minuman (F&B) terlaris dari Maha Niaga Artha. Mulai dari Es Teh, Kopi, Mie Pedas, hingga Seblak." 
-        />
-        <meta name="keywords" content="daftar franchise F&B, paket usaha minuman, waralaba mie pedas, franchise es teh, maha niaga artha jepara, paket usaha makanan" />
-        
-        <meta property="og:title" content="Daftar Brand Franchise Terlaris - Maha Niaga Artha" />
-        <meta property="og:description" content="Pilih brand kemitraan yang paling cocok dengan target pasarmu. Bergabunglah bersama ribuan mitra sukses kami di seluruh Indonesia." />
-        <meta property="og:type" content="website" />
-        
-        {/* Inject JSON-LD Daftar Produk & FAQ */}
-        <script type="application/ld+json">
-          {generateSEOData()}
-        </script>
+// KODE BARU:
+<div className="min-h-screen bg-white text-[#132b26]">
+          <Helmet>
+        <title>Daftar Brand Franchise F&B Terlaris | Maha Niaga Artha</title>
+        <meta name="description" content="Pilih paket usaha makanan dan minuman (F&B) dari Maha Niaga Artha. Tersedia franchise Es Teh, Mie Pedas, Kopi, hingga Seblak dengan modal terjangkau." />
+        <meta name="keywords" content="paket usaha minuman, kemitraan F&B, franchise makanan terlaris, daftar brand maha niaga artha, bisnis modal kecil" />
+        <script type="application/ld+json">{generateSEOData()}</script>
       </Helmet>
-      {/* ============================================= */}
 
       <Navbar />
 
-      {/* HERO SECTION */}
-      <section className="pt-28 pb-16 lg:pt-36 lg:pb-24 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 lg:px-8">
+      {/* HERO SECTION - Disesuaikan dengan Vibe Beranda (Bersih, Teks Gelap, Aksen Lime) */}
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-white">
+        <div className="container mx-auto px-4 lg:px-8 max-w-5xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl text-center mx-auto"
+            transition={{ duration: 0.5 }}
           >
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 text-sm text-primary-foreground/70 hover:text-primary-foreground mb-6 transition-colors"
-            >
-              <ArrowLeft size={16} />
-              Kembali ke Beranda
-            </Link>
 
-            <h1 className="text-4xl lg:text-5xl font-bold mb-4 tracking-tight">
-              Pilihan Brand Kemitraan F&B Terbaik
+            {/* Badge aksen khas warna lime green website utama */}
+            <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-[#c2f21f] text-[#132b26] font-bold text-xs md:text-sm tracking-wide uppercase">
+              Partner Usaha Terpercaya
+            </div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold mb-6 tracking-tight leading-[1.1] text-[#132b26]">
+              Pilihan Lengkap Paket <br className="hidden md:block"/> Brand Usaha Siap Jalan
             </h1>
 
-            <p className="text-lg text-primary-foreground/80 leading-relaxed max-w-2xl mx-auto">
-              Maha Niaga Artha menaungi berbagai brand waralaba makanan dan minuman kekinian yang telah terbukti laris dan menguntungkan. Temukan peluang usahamu di sini.
+            <p className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-3xl mx-auto font-medium">
+              Kami memfasilitasi Anda untuk memulai bisnis makanan dan minuman tanpa ribet. Tersedia berbagai pilihan brand yang telah teruji pasar dengan sistem yang mudah dijalankan.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* BRAND GRID SECTION */}
-      <section className="py-20 lg:py-24 bg-muted/20">
+      {/* BRAND GRID SECTION - Kartu disesuaikan dengan shape beranda */}
+      <section className="py-16 lg:py-24 bg-slate-50/50">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="text-xs font-bold tracking-widest text-primary uppercase mb-3 block">
-              Daftar Produk Kami
-            </span>
-            <h2 className="text-3xl font-bold text-foreground">
-              Jelajahi Brand Kemitraan Kami
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {brands.map((brand, index) => (
               <motion.div
                 key={brand.name}
@@ -158,32 +132,37 @@ const Products = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group bg-card rounded-3xl border border-border overflow-hidden hover:shadow-xl hover:shadow-primary/5 hover:border-primary/30 transition-all flex flex-col"
+                className="group bg-white rounded-[2rem] border border-slate-200/60 p-6 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] hover:border-[#c2f21f] transition-all duration-300 flex flex-col"
               >
-                {/* Image Area */}
-                <div className="h-56 w-full bg-white flex items-center justify-center p-6 border-b border-border/50 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                {/* Image Box - Background abu-abu sangat muda dengan sudut melengkung */}
+                <div className="h-56 w-full bg-slate-50 rounded-[1.5rem] flex items-center justify-center p-8 mb-6 relative overflow-hidden group-hover:bg-slate-100/50 transition-colors">
                   <img 
                     src={brand.logo} 
-                    alt={`Logo Franchise ${brand.name}`} 
-                    className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500 relative z-10 drop-shadow-sm"
+                    alt={`Logo kemitraan ${brand.name}`} 
+                    className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500 relative z-10 mix-blend-multiply"
                     loading="lazy"
                   />
                 </div>
                 
-                {/* Content Area */}
-                <div className="p-6 md:p-8 flex-grow flex flex-col justify-between">
+                {/* Text Content */}
+                <div className="flex-grow flex flex-col justify-between">
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    <h3 className="text-2xl font-bold text-[#132b26] mb-3">
                       {brand.name}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-slate-500 leading-relaxed text-[15px]">
                       {brand.desc}
                     </p>
                   </div>
-                  <button className="mt-6 w-full py-3 rounded-xl bg-primary/10 text-primary font-bold text-sm group-hover:bg-primary group-hover:text-primary-foreground transition-all">
-                    Pelajari Paket Usaha
-                  </button>
+                  
+                  {/* Tombol Aksen Lime Green khas Web Anda */}
+                  <Link 
+                    to="/kontak" 
+                    className="mt-8 w-full py-3.5 rounded-full bg-[#c2f21f] text-[#132b26] font-bold text-sm hover:bg-[#b5e519] transition-all duration-300 flex justify-center items-center gap-2 group/btn"
+                  >
+                    Konsultasi Brand Ini 
+                    <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                  </Link>
                 </div>
               </motion.div>
             ))}
@@ -191,18 +170,15 @@ const Products = () => {
         </div>
       </section>
 
-      {/* FAQ SECTION (SANGAT BAGUS UNTUK SEO PAA - People Also Ask) */}
-      <section className="py-20 lg:py-24 bg-card border-t border-border" id="faq-pengiriman">
+      {/* FAQ SECTION - Desain Clean minimalis */}
+      <section className="py-20 lg:py-28 bg-white border-t border-slate-100" id="informasi-pengiriman">
         <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
-          <div className="text-center mb-12">
-            <span className="text-xs font-bold tracking-widest text-primary uppercase mb-3 block">
-              Informasi Operasional
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Pertanyaan Seputar Pengiriman & Kemitraan
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#132b26] mb-4">
+              Informasi Operasional & Pengiriman
             </h2>
-            <p className="text-muted-foreground">
-              Segala hal yang perlu Anda ketahui sebelum bergabung menjadi mitra bisnis kami.
+            <p className="text-slate-500 text-lg">
+              Jawaban cepat untuk pertanyaan yang paling sering diajukan calon mitra.
             </p>
           </div>
 
@@ -210,26 +186,25 @@ const Products = () => {
             {faqs.map((faq, index) => (
               <div 
                 key={index} 
-                className={`border rounded-2xl transition-all duration-300 ${openFaq === index ? 'border-primary bg-primary/5' : 'border-border bg-background hover:border-primary/30'}`}
+                className={`border rounded-[1.5rem] transition-all duration-300 overflow-hidden ${openFaq === index ? 'border-[#132b26] bg-slate-50 shadow-sm' : 'border-slate-200 bg-white hover:border-slate-300'}`}
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full flex items-center justify-between p-6 text-left"
-                  aria-expanded={openFaq === index}
+                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${openFaq === index ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'}`}>
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors ${openFaq === index ? 'bg-[#c2f21f] text-[#132b26]' : 'bg-slate-100 text-slate-400'}`}>
                       {index === 0 && <Store size={18} />}
                       {index === 1 && <Package size={18} />}
                       {index === 2 && <Truck size={18} />}
                       {index === 3 && <MapPin size={18} />}
                     </div>
-                    <h3 className={`font-bold md:text-lg ${openFaq === index ? 'text-primary' : 'text-foreground'}`}>
+                    <h3 className={`font-bold text-base md:text-lg pr-4 ${openFaq === index ? 'text-[#132b26]' : 'text-[#132b26]/80'}`}>
                       {faq.question}
                     </h3>
                   </div>
                   <ChevronDown 
-                    className={`shrink-0 text-muted-foreground transition-transform duration-300 ${openFaq === index ? 'rotate-180 text-primary' : ''}`} 
+                    className={`shrink-0 transition-transform duration-300 w-5 h-5 ${openFaq === index ? 'rotate-180 text-[#132b26]' : 'text-slate-400'}`} 
                   />
                 </button>
                 
@@ -241,7 +216,7 @@ const Products = () => {
                       exit={{ height: 0, opacity: 0 }}
                       className="overflow-hidden"
                     >
-                      <div className="p-6 pt-0 pl-[4.5rem] text-muted-foreground text-sm leading-relaxed">
+                      <div className="p-6 pt-0 pl-[4.5rem] pr-8 text-slate-500 text-base leading-relaxed">
                         {highlightText(faq.answer)}
                       </div>
                     </motion.div>
@@ -250,7 +225,6 @@ const Products = () => {
               </div>
             ))}
           </div>
-
         </div>
       </section>
 

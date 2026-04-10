@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound.tsx";
 import AdminDashboard from "./pages/AdminDashboard.tsx";
 import CekStatus from "./pages/CekStatus.tsx";
 import Products from "./pages/Products.tsx";
+import About from "./pages/About.tsx"; 
 
 const queryClient = new QueryClient();
 
@@ -32,7 +33,10 @@ const App = () => (
             {/* 🔥 ROUTE UNTUK DASHBOARD ADMIN HRD */}
             <Route path="/admin-hrd" element={<AdminDashboard />} />
 
-            
+
+            <Route path="/tentang" element={<About />} />
+
+
             <Route path="/produk" element={<Products />} />
 
             <Route path="*" element={<NotFound />} />
