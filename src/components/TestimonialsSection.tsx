@@ -6,7 +6,7 @@ import testimonialAvatar from "@/assets/testimonial-avatar.jpg";
 const testimonials = [
   {
     quote:
-      "Awalnya saya ragu mulai usaha, tapi setelah ambil paket dari Maha Niaga Artha ternyata langsung bisa jualan. Alat dan bahan sudah lengkap, tinggal jalan saja.",
+      "Awalnya saya ragu mulai usaha, tapi setelah ambil paket dari Jafa Mitra Investama ternyata langsung bisa jualan. Alat dan bahan sudah lengkap, tinggal jalan saja.",
     name: "Rizky Pratama",
     role: "Mitra Mybestea",
     avatar: testimonialAvatar,

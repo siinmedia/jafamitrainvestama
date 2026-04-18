@@ -34,7 +34,7 @@ const CareerSection = () => {
           </h2>
 
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            Kami membuka kesempatan bagi Anda yang ingin berkembang bersama CV Maha Niaga Artha 
+            Kami membuka kesempatan bagi Anda yang ingin berkembang bersama CV Jafa Mitra Investama 
             dalam membangun dan mengelola bisnis makanan & minuman.
           </p>
         </div>

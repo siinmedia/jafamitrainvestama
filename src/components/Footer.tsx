@@ -7,7 +7,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-1">
             <h3 className="font-heading text-xl text-primary mb-3">
-              Maha Niaga Artha
+              Jafa Mitra Investama
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Partner terbaik untuk memulai usaha makanan & minuman. 
@@ -78,7 +78,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="mt-10 pt-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            © 2026 CV Maha Niaga Artha. All rights reserved.
+            © 2026 CV Jafa Mitra Investama. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
             Solusi Paket Usaha Siap Jalan untuk Semua

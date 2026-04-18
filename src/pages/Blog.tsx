@@ -32,7 +32,7 @@ const Blog = () => {
               Wawasan & Berita Terbaru
             </h1>
             <p className="text-lg text-primary-foreground/80 leading-relaxed max-w-2xl mx-auto">
-              Temukan berbagai artikel menarik seputar karir, budaya kerja, dan berita terbaru dari tim Maha Niaga Artha.
+              Temukan berbagai artikel menarik seputar karir, budaya kerja, dan berita terbaru dari tim Jafa Mitra Investama.
             </p>
           </motion.div>
         </div>

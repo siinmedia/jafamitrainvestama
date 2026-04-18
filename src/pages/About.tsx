@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-// KEYWORDS UNTUK SEO: "Paket Usaha Makanan", "Paket Usaha Minuman", "Bisnis Kuliner Siap Jalan", "CV Maha Niaga Artha"
+// KEYWORDS UNTUK SEO: "Paket Usaha Makanan", "Paket Usaha Minuman", "Bisnis Kuliner Siap Jalan", "CV Jafa Mitra Investama"
 const brands = [
   "Mybestea", "You Need Mie", "Mentoast", "Kopi Ibukota", "Esteh Ibukota", 
   "Kentang Gantenk", "Raja Steak", "Nice Coffee", "Seblak Express", 
@@ -48,16 +48,16 @@ const About = () => {
   return (
     <div className="min-h-screen bg-white text-[#132b26] selection:bg-[#c2f21f] overflow-x-hidden">
       <Helmet>
-        <title>Tentang Maha Niaga Artha | Pusat Paket Usaha Makanan & Minuman</title>
-        <meta name="description" content="Pelajari bagaimana CV Maha Niaga Artha membantu Anda memulai bisnis kuliner dengan paket usaha makanan dan minuman siap jalan yang matang dan terarah." />
-        <meta name="keywords" content="paket usaha makanan, paket usaha minuman, bisnis kuliner siap jalan, franchise makanan jepara, modal usaha kuliner, kemitraan minuman, CV Maha Niaga Artha" />
+        <title>Tentang Jafa Mitra Investama | Pusat Paket Usaha Makanan & Minuman</title>
+        <meta name="description" content="Pelajari bagaimana CV Jafa Mitra Investama membantu Anda memulai bisnis kuliner dengan paket usaha makanan dan minuman siap jalan yang matang dan terarah." />
+        <meta name="keywords" content="paket usaha makanan, paket usaha minuman, bisnis kuliner siap jalan, franchise makanan jepara, modal usaha kuliner, kemitraan minuman, CV Jafa Mitra Investama" />
         
         {/* JSON-LD Schema untuk SEO Organisasi */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "CV Maha Niaga Artha",
+            "name": "CV Jafa Mitra Investama",
             "url": "https://mahaniagaartha.com",
             "logo": "https://mahaniagaartha.com/logo.png",
             "description": "Penyedia paket usaha makanan dan minuman siap jalan terbaik di Indonesia.",
@@ -138,7 +138,7 @@ const About = () => {
               </h2>
               <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
                 <p>
-                  <strong>CV Maha Niaga Artha</strong> hadir sebagai solusi praktis bagi pengusaha pemula yang ingin memiliki usaha sendiri tanpa harus memulai dari nol. Kami memahami kendala utama calon pengusaha: kurangnya pengalaman, konsep, hingga sistem operasional.
+                  <strong>CV Jafa Mitra Investama</strong> hadir sebagai solusi praktis bagi pengusaha pemula yang ingin memiliki usaha sendiri tanpa harus memulai dari nol. Kami memahami kendala utama calon pengusaha: kurangnya pengalaman, konsep, hingga sistem operasional.
                 </p>
                 <p>
                   Oleh karena itu, kami menghadirkan berbagai <strong>paket usaha makanan dan minuman</strong> siap jalan yang telah dirancang matang, mulai dari konsep brand, menu, hingga strategi penjualan yang efektif.

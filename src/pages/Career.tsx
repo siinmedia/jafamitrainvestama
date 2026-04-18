@@ -79,7 +79,7 @@ const generateJobSchema = () => {
     description: job.description,
     hiringOrganization: {
       "@type": "Organization",
-      name: "Maha Niaga Artha",
+      name: "Jafa Mitra Investama",
       logo: "https://mahaniagaartha.com/logo.png", 
     },
     jobLocation: {
@@ -174,7 +174,7 @@ const Career = () => {
       const posisiLamar = formData.get("posisi") as string;
       const emailUser = formData.get("email") as string;
 
-      const waMessageApplicant = `Halo *${namaUser}*! 👋\n\nTerima kasih telah mengirimkan lamaran untuk posisi *${posisiLamar}* di *Maha Niaga Artha*.\n\nData dan CV Anda telah berhasil kami terima ke dalam sistem. Tim HRD kami akan segera melakukan review terhadap kualifikasi Anda.\n\nAnda dapat mengecek status lamaran secara berkala melalui menu "Karir" di website kami dengan menggunakan Email dan Nomor WhatsApp ini.\n\nSemoga sukses!\n\nSalam Hangat,\n*Tim HRD Maha Niaga Artha*`;
+      const waMessageApplicant = `Halo *${namaUser}*! 👋\n\nTerima kasih telah mengirimkan lamaran untuk posisi *${posisiLamar}* di *Jafa Mitra Investama*.\n\nData dan CV Anda telah berhasil kami terima ke dalam sistem. Tim HRD kami akan segera melakukan review terhadap kualifikasi Anda.\n\nAnda dapat mengecek status lamaran secara berkala melalui menu "Karir" di website kami dengan menggunakan Email dan Nomor WhatsApp ini.\n\nSemoga sukses!\n\nSalam Hangat,\n*Tim HRD Jafa Mitra Investama*`;
 
       try {
         const applicantData = new FormData();
@@ -260,14 +260,14 @@ const Career = () => {
     // KODE BARU:
 <div className="min-h-screen bg-white text-[#132b26]">
       <Helmet>
-        <title>Lowongan Kerja Jepara Terupdate | Karir Maha Niaga Artha</title>
+        <title>Lowongan Kerja Jepara Terupdate | Karir Jafa Mitra Investama</title>
         <meta 
           name="description" 
-          content="Cari lowongan kerja terbaru di Jepara? Maha Niaga Artha membuka kesempatan karir untuk Manager Operasional, Staff Logistik, dan posisi F&B lainnya. Lamar online sekarang!" 
+          content="Cari lowongan kerja terbaru di Jepara? Jafa Mitra Investama membuka kesempatan karir untuk Manager Operasional, Staff Logistik, dan posisi F&B lainnya. Lamar online sekarang!" 
         />
-        <meta name="keywords" content="Lowongan kerja Jepara, Loker Jepara terbaru, karir Maha Niaga Artha, lowongan manager operasional jepara, loker F&B jepara, lowongan staff logistik" />
+        <meta name="keywords" content="Lowongan kerja Jepara, Loker Jepara terbaru, karir Jafa Mitra Investama, lowongan manager operasional jepara, loker F&B jepara, lowongan staff logistik" />
         
-        <meta property="og:title" content="Lowongan Kerja di Maha Niaga Artha Jepara" />
+        <meta property="og:title" content="Lowongan Kerja di Jafa Mitra Investama Jepara" />
         <meta property="og:description" content="Temukan peluang karir profesional di bidang manajerial dan operasional bersama kami di Jepara." />
         <meta property="og:type" content="website" />
         
@@ -292,7 +292,7 @@ const Career = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold mb-6 tracking-tight leading-[1.1] text-[#132b26]">
-              Peluang Karir Terbaik <br className="hidden md:block"/> di Maha Niaga Artha
+              Peluang Karir Terbaik <br className="hidden md:block"/> di Jafa Mitra Investama
             </h1>
 
             <p className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-3xl mx-auto font-medium">

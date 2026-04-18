@@ -29,14 +29,14 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "budaya-kerja-inovatif",
-    title: "Mengenal Budaya Kerja Inovatif di Maha Niaga Artha",
+    title: "Mengenal Budaya Kerja Inovatif di Jafa Mitra Investama",
     category: "Perusahaan",
     date: "20 Mei 2024",
     readTime: "3 Menit Baca",
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop",
     excerpt: "Mengapa lingkungan kerja yang kolaboratif sangat penting bagi pertumbuhan karir dan perusahaan?",
     content: [
-      "Di Maha Niaga Artha, kami percaya bahwa inovasi lahir dari kolaborasi. Kami tidak hanya bekerja, tetapi kami tumbuh bersama sebagai satu keluarga besar.",
+      "Di Jafa Mitra Investama, kami percaya bahwa inovasi lahir dari kolaborasi. Kami tidak hanya bekerja, tetapi kami tumbuh bersama sebagai satu keluarga besar.",
       "Budaya kerja kami mengedepankan komunikasi yang terbuka (open door policy), di mana setiap ide dihargai, terlepas dari apa pun posisi Anda di perusahaan.",
       "Selain itu, kami rutin mengadakan sesi 'Knowledge Sharing' setiap bulannya. Ini adalah momen di mana anggota tim bisa berbagi ilmu baru, pengalaman, atau sekadar berdiskusi santai mengenai tren industri terkini.",
       "Bergabung dengan kami berarti Anda siap untuk terus belajar, berinovasi, dan memberikan dampak positif bagi masyarakat."

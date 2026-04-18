@@ -189,7 +189,7 @@ const AdminDashboard = () => {
         <div className="flex items-center gap-4">
           <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white font-bold shadow-md shadow-primary/20">HR</div>
           <div>
-            <h1 className="text-lg font-bold text-gray-900 leading-none">Maha Niaga Artha</h1>
+            <h1 className="text-lg font-bold text-gray-900 leading-none">Jafa Mitra Investama</h1>
             <p className="text-xs text-gray-500 mt-1 font-medium tracking-wide uppercase">Recruitment Dashboard</p>
           </div>
         </div>

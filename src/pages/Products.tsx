@@ -88,9 +88,9 @@ const Products = () => {
 // KODE BARU:
 <div className="min-h-screen bg-white text-[#132b26]">
           <Helmet>
-        <title>Daftar Brand Franchise F&B Terlaris | Maha Niaga Artha</title>
-        <meta name="description" content="Pilih paket usaha makanan dan minuman (F&B) dari Maha Niaga Artha. Tersedia franchise Es Teh, Mie Pedas, Kopi, hingga Seblak dengan modal terjangkau." />
-        <meta name="keywords" content="paket usaha minuman, kemitraan F&B, franchise makanan terlaris, daftar brand maha niaga artha, bisnis modal kecil" />
+        <title>Daftar Brand Franchise F&B Terlaris | Jafa Mitra Investama</title>
+        <meta name="description" content="Pilih paket usaha makanan dan minuman (F&B) dari Jafa Mitra Investama. Tersedia franchise Es Teh, Mie Pedas, Kopi, hingga Seblak dengan modal terjangkau." />
+        <meta name="keywords" content="paket usaha minuman, kemitraan F&B, franchise makanan terlaris, daftar brand Jafa Mitra Investama, bisnis modal kecil" />
         <script type="application/ld+json">{generateSEOData()}</script>
       </Helmet>
 

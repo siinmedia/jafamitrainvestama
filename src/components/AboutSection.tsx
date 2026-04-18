@@ -58,7 +58,7 @@ const AboutSection = () => {
             {/* Description */}
             <div className="bg-card rounded-2xl p-8 lg:p-10 border border-border">
               <p className="text-muted-foreground leading-relaxed mb-6">
-                CV Maha Niaga Artha membantu Anda memulai usaha makanan dan minuman tanpa ribet. 
+                CV Jafa Mitra Investama membantu Anda memulai usaha makanan dan minuman tanpa ribet. 
                 Mulai dari brand, bahan baku, hingga sistem penjualan sudah kami siapkan, 
                 sehingga Anda bisa langsung fokus menjalankan dan mengembangkan usaha.
               </p>
