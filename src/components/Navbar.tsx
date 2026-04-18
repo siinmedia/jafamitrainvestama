@@ -52,8 +52,8 @@ const Navbar = () => {
           to="/"
           className="font-heading text-2xl tracking-tight leading-none"
         >
-          <span className="font-bold text-foreground">Maha Niaga</span>{" "}
-          <span className="font-extrabold text-primary">Artha</span>
+          <span className="font-bold text-foreground">JAFA MITRA</span>{" "}
+          <span className="font-extrabold text-primary">INVESTAMA</span>
         </Link>
 
         {/* Desktop Menu */}
