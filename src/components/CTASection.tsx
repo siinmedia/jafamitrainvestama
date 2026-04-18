@@ -54,7 +54,7 @@ href="https://wa.me/6281212126722?text=Halo%20Maha%20Niaga%20Artha,%20saya%20men
 
             <span className="flex items-center gap-2">
               <Phone size={14} />
-              0812-1212-5422
+              62 812-1212-6722
             </span>
 
           </div>
